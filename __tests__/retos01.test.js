@@ -4,6 +4,7 @@ const {
   filterStrings,
   filterA,
   getRepeatedWord,
+  filtrarProductosMasCaros,
 } = require('../src/retos01.js')
 // const retos01 = require('../src/retos01.js')
 // retos01.maxNumber()
@@ -81,4 +82,23 @@ test('getRepeatedWord al darle una lista de strings (con palabras repetidas) dev
   const sut = getRepeatedWord(words);
   //THEN
   expect(sut).toBe(3);
+});
+
+test('filtrarProductosMasCaros al darle un array de objetos producto (con nombre y precio) devuelva un array de los objetos que sean más caros de 10', () => {
+
+  //GIVEN
+  const products = [
+    { nombre: 'x', precio: 10 },
+    { nombre: 's', precio: 8 },
+    { nombre: 'f', precio: 10 },
+    { nombre: 'h', precio: 12 },
+    { nombre: 'd', precio: 9 },
+    { nombre: 'a', precio: 7 },
+    { nombre: 'g', precio: 11 },
+  ];
+  //WHEN
+  const sut = filtrarProductosMasCaros(products);
+  console.log(sut);
+  //THEN
+  expect(sut).toEqual([{ nombre: 'h', precio: 12 }, { nombre: 'g', precio: 11 }])
 });

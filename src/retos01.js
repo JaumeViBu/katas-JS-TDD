@@ -47,10 +47,16 @@ function getRepeatedWord(wordList) {
   return Math.max(...Object.values(wordsRepeated));;
 }
 
+function filtrarProductosMasCaros(itemProducts) {
+
+  return itemProducts.filter(item => item.precio > 10);
+}
+
 module.exports = {
   maxNumber,
   sumaPares,
   filterStrings,
   filterA,
   getRepeatedWord,
+  filtrarProductosMasCaros,
 }
