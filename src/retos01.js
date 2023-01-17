@@ -24,7 +24,11 @@ function filterStrings(list) {
 }
 
 function filterA(listaStrings) {
-  //to do
+  const listaStringsA = listaStrings.filter((item) => {
+    return typeof item == 'string' && item[0] == 'a'
+  })
+
+  return listaStringsA
 }
 
 module.exports = {

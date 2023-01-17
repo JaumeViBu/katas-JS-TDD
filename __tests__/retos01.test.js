@@ -1,4 +1,9 @@
-const { maxNumber, sumaPares, filterStrings, filterA } = require('../src/retos01.js');
+const {
+  maxNumber,
+  sumaPares,
+  filterStrings,
+  filterA,
+} = require('../src/retos01.js')
 // const retos01 = require('../src/retos01.js')
 // retos01.maxNumber()
 
@@ -24,9 +29,9 @@ test('sumaPares, al darle una lista de números devuelva la suma de todos los qu
 
 test('filterStrings, de un array de números y strings devuelva un array de solamente los string', () => {
   //GIVEN
-  const arrayList = [27, 88, 'gos', 'gat', '111'];
+  const arrayList = [27, 88, 'gos', 'gat', '111']
   //WHEN
-  const sut = filterStrings(arrayList);
+  const sut = filterStrings(arrayList)
   //THEN
 
   //1.comparamos que tenga el contenido ['gat', 'gos', '111'] en cualquier orden
@@ -34,33 +39,47 @@ test('filterStrings, de un array de números y strings devuelva un array de sola
 
   //2.comparamos que todos los items del array sean strings
   for (const item of sut) {
-    expect(typeof item).toBe('string');
-  };
+    expect(typeof item).toBe('string')
+  }
 
   //3. comparamos que el array tenga solo 3 items
-  expect(sut.length).toBe(3);
+  expect(sut.length).toBe(3)
 })
 
-test ('filterA, dado un array de strings devuelve un array de los strings que empiezan por "a"', () => {
+test('filterA, dado un array de strings devuelve un array de los strings que empiezan por "a"', () => {
   //GIVEN
-  const arrayList = [27, 88, 'gos', 'gat', '111', 'auto', '', 'arrow'];
+  const arrayList = [27, 88, 'gos', 'gat', '111', 'auto', '', 'arrow']
   //WHEN
-  const sut = filterA(arrayList);
+  const sut = filterA(arrayList)
   //THEN
 
   //1.comparamos que tenga el contenido ['auto', 'arrow'] en cualquier orden
-  expect(sut).toEqual(expect.arrayContaining(['auto', 'arrow']));
+  expect(sut).toEqual(expect.arrayContaining(['auto', 'arrow']))
 
   //2.comparamos que todos los items del array sean strings y que comiencen por la letra "a"
   for (const item of sut) {
-    expect(typeof item).toBe('string');
-    expect(item[0]).toBe('a');
-  };
+    expect(typeof item).toBe('string')
+    expect(item[0]).toBe('a')
+  }
 
   //3. comparamos que el array tenga solo 2 items
-  expect(sut.length).toBe(2);
+  expect(sut.length).toBe(2)
+})
 
-
-
-
-});
+//
+test('devuelve  una lista de productos de barratos a carros ', () => {
+  //GIVEN
+  const listProducts = [
+    { nombre: 'patatas', precio: 2 },
+    { nombre: 'zanahoria', precio: 1 },
+    { nombre: 'manzanas', precio: 3 },
+  ]
+  //WHEN
+  const sut = listaProductsOrdenedByPrice(listProducts)
+  //THEN
+  expect(sut).toEqual([
+    { nombre: 'zanahoria', precio: 1 },
+    { nombre: 'patatas', precio: 2 },
+    { nombre: 'manzanas', precio: 3 },
+  ])
+})
