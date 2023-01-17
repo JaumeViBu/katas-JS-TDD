@@ -31,11 +31,26 @@ function filterA(listaStrings) {
   return listaStringsA
 }
 
-function lista de strings (con palabras repetidas) devuelva el número de repeticiones de la palabra que más veces aparezca. 
+function getRepeatedWord(wordList) {
+  const wordsRepeated = {};
+
+  wordList.forEach(word => {
+    if (wordsRepeated[word]) {
+      wordsRepeated[word] += 1;
+    } else {
+      wordsRepeated[word] = 1;
+    }
+  });
+
+
+
+  return Math.max(...Object.values(wordsRepeated));;
+}
 
 module.exports = {
   maxNumber,
   sumaPares,
   filterStrings,
   filterA,
+  getRepeatedWord,
 }

@@ -3,6 +3,7 @@ const {
   sumaPares,
   filterStrings,
   filterA,
+  getRepeatedWord,
 } = require('../src/retos01.js')
 // const retos01 = require('../src/retos01.js')
 // retos01.maxNumber()
@@ -66,3 +67,18 @@ test('filterA, dado un array de strings devuelve un array de los strings que emp
   expect(sut.length).toBe(2)
 })
 
+test('getRepeatedWord al darle una lista de strings (con palabras repetidas) devuelva el número de repeticiones de la palabra que más veces aparezca', () => {
+  //GIVEN
+  const words = [
+    'gato',
+    'zapato',
+    'patata',
+    'zapato',
+    'zapato',
+    'gato',
+  ]
+  //WHEN
+  const sut = getRepeatedWord(words);
+  //THEN
+  expect(sut).toBe(3);
+});
