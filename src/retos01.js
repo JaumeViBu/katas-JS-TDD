@@ -31,9 +31,15 @@ function filterA(listaStrings) {
   return listaStringsA
 }
 
+function listaProductsOrdenedByPrice(itemList) {
+  const resultado = itemList.sort((itemA, itemB) => itemA.precio - itemB.precio);
+  return resultado;
+}
+
 module.exports = {
   maxNumber,
   sumaPares,
   filterStrings,
   filterA,
+  listaProductsOrdenedByPrice,
 }

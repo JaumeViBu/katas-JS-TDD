@@ -3,6 +3,7 @@ const {
   sumaPares,
   filterStrings,
   filterA,
+  listaProductsOrdenedByPrice,
 } = require('../src/retos01.js')
 // const retos01 = require('../src/retos01.js')
 // retos01.maxNumber()
@@ -67,7 +68,7 @@ test('filterA, dado un array de strings devuelve un array de los strings que emp
 })
 
 //
-test('devuelve  una lista de productos de barratos a carros ', () => {
+test('devuelve  una lista de productos de baratos a caros ', () => {
   //GIVEN
   const listProducts = [
     { nombre: 'patatas', precio: 2 },
