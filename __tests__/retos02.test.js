@@ -1,6 +1,7 @@
 const {
   listaProductsOrdenedByPrice,
   getUnfinishedTasks,
+  getAdminsSorted,
 } = require('../src/retos02.js');
 
 //
@@ -36,6 +37,20 @@ test('getUnfinishedTasks al darle un array de objetos ’tarea’ (con atributos
   const sut = getUnfinishedTasks(taskList);
   //THEN
   expect(sut).toEqual([{ title: 'kjhkgmg', isDone: false }, { title: 'eryeryety', isDone: false }, { title: 'xcvbxcb', isDone: false },]);
+});
+
+test('getAdminsSorted al darle una lista de objetos usuario (con nombre<string> y rol<string>) devuelva otra lista de los usuarios que contenga solamente los usuarios administradores (’admin’) ordenados alfabéticamente por el nombre.', () => {
+  //GIVEN
+  const users = [
+    { nombre: 'sergi', rol: 'admin' },
+    { nombre: 'david', rol: 'user' },
+    { nombre: 'andrea', rol: 'admin' },
+  ];
+  //WHEN
+  const sut = getAdminsSorted(users);
+  console.log(sut);
+  //THEN
+  expect(sut).toEqual([{ nombre: 'andrea', rol: 'admin' }, { nombre: 'sergi', rol: 'admin' },]);
 });
 
 
