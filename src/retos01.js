@@ -26,6 +26,8 @@ function filterStrings(list) {
   return listaStrings;
 }
 
+
+
 module.exports = {
   maxNumber,
   sumaPares,
