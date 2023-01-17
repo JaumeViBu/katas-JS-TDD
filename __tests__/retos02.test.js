@@ -48,7 +48,6 @@ test('getAdminsSorted al darle una lista de objetos usuario (con nombre<string> 
   ];
   //WHEN
   const sut = getAdminsSorted(users);
-  console.log(sut);
   //THEN
   expect(sut).toEqual([{ nombre: 'andrea', rol: 'admin' }, { nombre: 'sergi', rol: 'admin' },]);
 });
