@@ -1,4 +1,4 @@
-const { maxNumber, sumaPares, filterStrings } = require('../src/retos01.js');
+const { maxNumber, sumaPares, filterStrings, filterA } = require('../src/retos01.js');
 // const retos01 = require('../src/retos01.js')
 // retos01.maxNumber()
 
